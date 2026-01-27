@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scott Glover - Software Engineer & Technical Leader</title>
+    <meta name="description" content="Portfolio of Scott Glover - Team Lead, Senior Software Engineer, building enterprise platforms, AI tools, and privacy-first mobile apps.">
+    <style>
+        :root {
+            --bg: #0d1117;
+            --bg-card: #161b22;
+            --bg-card-hover: #1c2129;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --accent-hover: #79b8ff;
+            --green: #3fb950;
+            --purple: #bc8cff;
+            --orange: #d29922;
+            --red: #f85149;
+            --pink: #f778ba;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: var(--accent-hover);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 60px 0 40px;
+            border-bottom: 1px solid var(--border);
+        }
+        .header-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 32px;
+        }
+        .header-text h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .header-text .subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        .header-text .bio {
+            font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            line-height: 1.7;
+        }
+        .header-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .header-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--text);
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .header-links a:hover {
+            border-color: var(--accent);
+            background: rgba(88, 166, 255, 0.08);
+            color: var(--accent);
+        }
+        .header-links svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        /* Nav */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(13, 17, 23, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 0;
+        }
+        nav .container {
+            display: flex;
+            gap: 0;
+            overflow-x: auto;
+        }
+        nav a {
+            color: var(--text-muted);
+            padding: 14px 18px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            white-space: nowrap;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        nav a:hover, nav a.active {
+            color: var(--text);
+            border-bottom-color: var(--accent);
+        }
+
+        /* Sections */
+        section {
+            padding: 48px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        section:last-child {
+            border-bottom: none;
+        }
+        section h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        section .section-desc {
+            color: var(--text-muted);
+            margin-bottom: 28px;
+            font-size: 0.95rem;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .skill-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .skill-card h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .skill-tag {
+            background: rgba(88, 166, 255, 0.1);
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Projects */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 16px;
+        }
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            transition: border-color 0.2s, background 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card:hover {
+            border-color: var(--accent);
+            background: var(--bg-card-hover);
+        }
+        .project-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            flex: 1;
+        }
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .lang-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+        .lang-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .lang-kotlin { background: #A97BFF; }
+        .lang-rust { background: #DEA584; }
+        .lang-go { background: #00ADD8; }
+        .lang-typescript { background: #3178C6; }
+        .lang-cpp { background: #F34B7D; }
+        .lang-swift { background: #F05138; }
+        .lang-javascript { background: #F1E05A; }
+        .lang-react { background: #61DAFB; }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+        .badge-oss {
+            background: rgba(63, 185, 80, 0.15);
+            color: var(--green);
+            border: 1px solid rgba(63, 185, 80, 0.3);
+        }
+        .badge-proprietary {
+            background: rgba(188, 140, 255, 0.15);
+            color: var(--purple);
+            border: 1px solid rgba(188, 140, 255, 0.3);
+        }
+        .project-link {
+            margin-top: 12px;
+            font-size: 0.85rem;
+        }
+
+        /* Websites */
+        .websites-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+        }
+        .website-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .website-card:hover {
+            border-color: var(--accent);
+            background: var(--bg-card-hover);
+        }
+        .website-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+        }
+        .website-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .website-card .url {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.85rem;
+        }
+
+        /* Contact & Support */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .contact-card h3 {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .contact-card a, .contact-card span {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .support-section {
+            margin-top: 32px;
+        }
+        .support-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+        }
+        .support-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .support-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text);
+            transition: all 0.2s;
+        }
+        .support-btn:hover {
+            border-color: var(--orange);
+            background: rgba(210, 153, 34, 0.1);
+            color: var(--orange);
+        }
+
+        /* Footer */
+        footer {
+            padding: 32px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Filter buttons */
+        .filter-bar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(88, 166, 255, 0.08);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            .header-text h1 {
+                font-size: 1.8rem;
+            }
+            .project-grid, .skills-grid, .websites-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            section {
+                padding: 32px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Scott Glover</h1>
+                <div class="subtitle">Team Lead & Senior Software Engineer at HP Inc.</div>
+                <p class="bio">
+                    I build enterprise platforms, AI-powered tools, and privacy-first mobile applications.
+                    With 17+ years of experience spanning Linux kernel development, enterprise architecture,
+                    and AI/ML integration, I focus on solving complex problems with clean, reliable software.
+                </p>
+                <p class="bio" style="margin-top: 8px;">
+                    MS Computer Science from UT Austin (AI/ML) &bull; BS Computer Engineering from Texas A&M
+                </p>
+                <div class="header-links">
+                    <a href="https://github.com/scottgl9" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                        GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/scottgl" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 16 16"><path d="M13.6 1H2.4A1.4 1.4 0 001 2.4v11.2A1.4 1.4 0 002.4 15h11.2a1.4 1.4 0 001.4-1.4V2.4A1.4 1.4 0 0013.6 1zM5.3 12.7H3.3V6.3h2v6.4zM4.3 5.4a1.2 1.2 0 110-2.4 1.2 1.2 0 010 2.4zm8.4 7.3h-2V9.6c0-.7 0-1.7-1-1.7s-1.2.8-1.2 1.6v3.2h-2V6.3h1.9v.9h0a2.1 2.1 0 011.9-1c2 0 2.4 1.3 2.4 3.1v3.4z"/></svg>
+                        LinkedIn
+                    </a>
+                    <a href="mailto:scottgl@gmail.com">
+                        <svg viewBox="0 0 16 16"><path d="M1.75 2h12.5c.97 0 1.75.78 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5C0 2.78.78 2 1.75 2zm0 1.5a.25.25 0 00-.25.25v.59l6.5 3.9 6.5-3.9v-.59a.25.25 0 00-.25-.25H1.75zM1.5 5.86v6.39c0 .14.11.25.25.25h12.5a.25.25 0 00.25-.25V5.86L8.32 9.6a.75.75 0 01-.64 0L1.5 5.86z"/></svg>
+                        Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <div class="container">
+        <a href="#skills" class="active">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#websites">Websites</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<main class="container">
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <p class="section-desc">Core areas of expertise built over 17+ years of professional experience.</p>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Languages</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">C/C++</span>
+                    <span class="skill-tag">Go</span>
+                    <span class="skill-tag">Rust</span>
+                    <span class="skill-tag">Kotlin</span>
+                    <span class="skill-tag">Swift</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">Bash</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">C#</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>Systems & Platforms</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Linux Kernel</span>
+                    <span class="skill-tag">Android</span>
+                    <span class="skill-tag">iOS</span>
+                    <span class="skill-tag">Qt</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Jetpack Compose</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h3>AI & Machine Learning</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">LLM Integration</span>
+                    <span class="skill-tag">RAG</span>
+                    <span class="skill-tag">MCP</span>
+                    <span class="skill-tag">On-Device Inference</span>
+                    <span class="skill-tag">LiteRT-LM</span>
+                    <span class="skill-tag">ONNX</span>
+                    <span class="skill-tag">MediaPipe</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <p class="section-desc">A selection of open source tools and applications I've built.</p>
+
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="oss">Open Source</button>
+            <button class="filter-btn" data-filter="app">Apps</button>
+            <button class="filter-btn" data-filter="tool">Developer Tools</button>
+        </div>
+
+        <div class="project-grid">
+
+            <div class="project-card" data-tags="oss tool">
+                <h3>
+                    marktoflow
+                    <span class="badge badge-oss">Open Source</span>
+                </h3>
+                <p>Universal automation framework enabling markdown-based workflows with native MCP support, direct SDK integrations for 20+ services, AI agent compatibility, and distributed execution.</p>
+                <div class="project-meta">
+                    <span class="lang-badge"><span class="lang-dot lang-typescript"></span> TypeScript</span>
+                </div>
+                <div class="project-link">
+                    <a href="https://github.com/marktoflow/marktoflow" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-tags="oss tool">
+                <h3>
+                    cli-web-search
+                    <span class="badge badge-oss">Open Source</span>
+                </h3>
+                <p>Cross-platform CLI web search tool for AI agents and power users. Supports 8+ search providers with fallback, MCP server mode, caching, and flexible output formats (JSON, Markdown, plain text).</p>
+                <div class="project-meta">
+                    <span class="lang-badge"><span class="lang-dot lang-rust"></span> Rust</span>
+                </div>
+                <div class="project-link">
+                    <a href="https://github.com/scottgl9/cli-web-search" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-tags="oss tool">
+                <h3>
+                    thop
+                    <span class="badge badge-oss">Open Source</span>
+                </h3>
+                <p>Terminal Hopper &mdash; lightweight CLI tool enabling AI agents to execute commands across local and remote SSH sessions with seamless context switching, proxy mode, and MCP server integration.</p>
+                <div class="project-meta">
+                    <span class="lang-badge"><span class="lang-dot lang-go"></span> Go</span>
+                </div>
+                <div class="project-link">
+                    <a href="https://github.com/scottgl9/thop" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-tags="oss tool">
+                <h3>
+                    qt-chatbot-agent
+                    <span class="badge badge-oss">Open Source</span>
+                </h3>
+                <p>Qt5-based desktop chatbot with MCP tool calling, RAG document Q&A, streaming responses, multiple LLM backends (Ollama, OpenAI), markdown rendering, and conversation management.</p>
+                <div class="project-meta">
+                    <span class="lang-badge"><span class="lang-dot lang-cpp"></span> C++ / Qt5</span>
+                </div>
+                <div class="project-link">
+                    <a href="https://github.com/scottgl9/qt-chatbot-agent" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-tags="oss tool">
+                <h3>
+                    mobile-ai-agent-lib
+                    <span class="badge badge-oss">Open Source</span>
+                </h3>
+                <p>Cross-platform library for building AI agents on Android and iOS. Provides tool interface, agent executor, MCP client, automatic retry with circuit breakers, and credential encryption.</p>
+                <div class="project-meta">
+                    <span class="lang-badge"><span class="lang-dot lang-kotlin"></span> Kotlin</span>
+                    <span class="lang-badge"><span class="lang-dot lang-swift"></span> Swift</span>
+                </div>
+                <div class="project-link">
+                    <a href="https://github.com/scottgl9/mobile-ai-agent-lib" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-tags="oss tool">
+                <h3>
+                    android-google-drive-sync
+                    <span class="badge badge-oss">Open Source</span>
+                </h3>
+                <p>Android library for bidirectional Google Drive sync with checksum-based deduplication, AES-256-GCM encryption, GZIP compression, conflict resolution, and background sync via WorkManager.</p>
+                <div class="project-meta">
+                    <span class="lang-badge"><span class="lang-dot lang-kotlin"></span> Kotlin</span>
+                </div>
+                <div class="project-link">
+                    <a href="https://github.com/scottgl9/android-google-drive-sync" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-tags="app">
+                <h3>
+                    PocketGem AI Agent
+                    <span class="badge badge-proprietary">VaneSpark</span>
+                </h3>
+                <p>Privacy-first Android AI assistant with 100% on-device LLM inference, zero telemetry, MCP tool calling, RAG document Q&A, and multi-language support. Runs Gemma models locally via LiteRT-LM.</p>
+                <div class="project-meta">
+                    <span class="lang-badge"><span class="lang-dot lang-kotlin"></span> Kotlin</span>
+                </div>
+                <div class="project-link">
+                    <a href="https://play.google.com/store/apps/details?id=com.vanespark.pocketgem" target="_blank" rel="noopener">Google Play &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-tags="app">
+                <h3>
+                    ClientVault
+                    <span class="badge badge-proprietary">VaneSpark</span>
+                </h3>
+                <p>Local-first Android client management app with encrypted backups, WhatsApp chat import, document scanning (ML Kit), invoice generation, Google Drive sync, and Material Design 3 UI.</p>
+                <div class="project-meta">
+                    <span class="lang-badge"><span class="lang-dot lang-kotlin"></span> Kotlin</span>
+                </div>
+                <div class="project-link">
+                    <a href="https://play.google.com/store/apps/details?id=com.vanespark.clientvault" target="_blank" rel="noopener">Google Play &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-tags="app">
+                <h3>
+                    VaneSpark Notes
+                    <span class="badge badge-proprietary">VaneSpark</span>
+                </h3>
+                <p>Privacy-focused markdown note-taking app with true WYSIWYG editing, staggered grid layout, image support, archive & trash, and ZIP backup. Local-first with no cloud dependency.</p>
+                <div class="project-meta">
+                    <span class="lang-badge"><span class="lang-dot lang-kotlin"></span> Kotlin</span>
+                </div>
+                <div class="project-link">
+                    <a href="https://play.google.com/store/apps/details?id=com.vanespark.notes" target="_blank" rel="noopener">Google Play &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card" data-tags="app tool">
+                <h3>
+                    VaneSpark WebSSH
+                    <span class="badge badge-proprietary">VaneSpark</span>
+                </h3>
+                <p>Browser-based SSH access system with a lightweight Go agent, Node.js backend for authentication and connection brokering, and a React terminal interface with real-time WebSocket I/O.</p>
+                <div class="project-meta">
+                    <span class="lang-badge"><span class="lang-dot lang-go"></span> Go</span>
+                    <span class="lang-badge"><span class="lang-dot lang-javascript"></span> Node.js</span>
+                    <span class="lang-badge"><span class="lang-dot lang-react"></span> React</span>
+                </div>
+                <div class="project-link">
+                    <a href="https://webssh.vanespark.com" target="_blank" rel="noopener">Visit site &rarr;</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="websites">
+        <h2>Websites</h2>
+        <p class="section-desc">Live sites I've designed and built.</p>
+        <div class="websites-grid">
+            <a class="website-card" href="https://www.vanespark.com" target="_blank" rel="noopener">
+                <h3>VaneSpark</h3>
+                <p>Official showcase for VaneSpark mobile applications with app pages, screenshots, and privacy policies.</p>
+                <span class="url">www.vanespark.com &rarr;</span>
+            </a>
+            <a class="website-card" href="https://webssh.vanespark.com" target="_blank" rel="noopener">
+                <h3>WebSSH</h3>
+                <p>Web-based SSH terminal access for managing remote systems directly from the browser.</p>
+                <span class="url">webssh.vanespark.com &rarr;</span>
+            </a>
+            <a class="website-card" href="https://marktoflow.github.io/web" target="_blank" rel="noopener">
+                <h3>MarkToFlow Designer</h3>
+                <p>Visual drag-and-drop workflow designer for creating markdown-based automation workflows.</p>
+                <span class="url">marktoflow.github.io/web &rarr;</span>
+            </a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get in Touch</h2>
+        <p class="section-desc">I'm always open to discussing new projects and opportunities.</p>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>Email</h3>
+                <a href="mailto:scottgl@gmail.com">scottgl@gmail.com</a>
+            </div>
+            <div class="contact-card">
+                <h3>LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/scottgl" target="_blank" rel="noopener">linkedin.com/in/scottgl</a>
+            </div>
+            <div class="contact-card">
+                <h3>GitHub</h3>
+                <a href="https://github.com/scottgl9" target="_blank" rel="noopener">github.com/scottgl9</a>
+            </div>
+        </div>
+
+        <div class="support-section">
+            <h3>Support My Work</h3>
+            <p class="section-desc">If you find my open source projects useful, consider supporting development.</p>
+            <div class="support-links">
+                <a class="support-btn" href="https://paypal.me/scottgl" target="_blank" rel="noopener">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7.076 21.337H2.47a.641.641 0 01-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797H9.603c-.564 0-1.04.408-1.13.964L7.076 21.337z"/></svg>
+                    PayPal
+                </a>
+                <a class="support-btn" href="https://buymeacoffee.com/scottgl" target="_blank" rel="noopener">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.216 6.415l-.132-.666c-.119-.598-.388-1.163-1.001-1.379-.197-.069-.42-.098-.57-.241-.152-.143-.196-.366-.231-.572-.065-.378-.125-.756-.192-1.133-.057-.325-.102-.69-.25-.987-.195-.4-.597-.634-.996-.788a5.723 5.723 0 00-.626-.194c-1-.263-2.05-.36-3.077-.416a25.834 25.834 0 00-3.7.062c-.915.083-1.88.184-2.75.5-.318.116-.646.256-.888.501-.297.302-.393.77-.177 1.146.154.267.415.456.692.58.36.162.737.284 1.123.366 1.075.238 2.189.331 3.287.37 1.218.05 2.437.01 3.65-.118.299-.033.598-.073.896-.119.352-.054.578-.513.474-.834-.124-.383-.457-.531-.834-.473-.466.074-.96.108-1.382.146-1.177.08-2.358.082-3.536.006a22.228 22.228 0 01-1.157-.107l-.318-.049c.01-.088.022-.174.035-.26.077-.531.263-.947.744-1.2.388-.204.814-.278 1.247-.333a24.6 24.6 0 013.808-.076c.725.048 1.456.12 2.162.281.282.064.563.147.832.252.116.045.238.092.344.165.088.06.042.159.013.239-.034.092-.073.178-.115.264-.085.174-.176.347-.273.516-.195.337-.415.665-.652.978-.076.101.005.231.116.271l.1.03c.266.075.532.156.797.238.16.049.32.098.48.148.167.052.344.108.49.203.3.195.363.578.182.862-.192.297-.48.477-.784.625-.39.19-.79.356-1.198.5-.664.233-1.342.434-2.03.602-.702.17-1.416.312-2.134.419-.362.054-.726.1-1.09.136a.35.35 0 00-.316.4.35.35 0 00.392.306c.462-.05.921-.112 1.378-.196.935-.17 1.86-.402 2.762-.698.872-.287 1.727-.635 2.509-1.112.332-.203.645-.43.921-.7.202-.196.385-.42.509-.683.17-.362.12-.778-.147-1.07-.3-.328-.716-.476-1.128-.589l-.278-.079c.37-.569.674-1.173.87-1.823z"/><path d="M3.568 16.357a.35.35 0 00-.088.468l.182.274c.093.14.248.198.4.149l1.982-.636c.18-.058.264-.275.17-.442l-.172-.306a.35.35 0 00-.452-.153L3.568 16.357zM4.638 18.877l-.203.305a.35.35 0 00.088.468l2.021.647c.152.049.307-.01.4-.149l.182-.274a.35.35 0 00-.088-.468l-1.948-.678a.35.35 0 00-.452.149z"/></svg>
+                    Buy Me a Coffee
+                </a>
+                <a class="support-btn" href="https://github.com/sponsors/scottgl9" target="_blank" rel="noopener">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.565 20.565 0 008 13.393a20.561 20.561 0 003.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.75.75 0 01-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5z"/></svg>
+                    GitHub Sponsors
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Scott Glover. Built with plain HTML &amp; CSS.</p>
+    </div>
+</footer>
+
+<script>
+    // Project filtering
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.dataset.filter;
+            document.querySelectorAll('.project-card').forEach(card => {
+                if (filter === 'all' || card.dataset.tags.includes(filter)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // Active nav highlighting on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const top = section.offsetTop - 80;
+            if (window.scrollY >= top) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Smooth scroll for nav links
+    navLinks.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
