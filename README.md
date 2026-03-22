@@ -2,7 +2,7 @@
 
 **Team Lead & Senior Software Engineer | MS Computer Science (UT Austin) | 17+ Years Experience**
 
-I build enterprise platforms, AI-powered tools, and privacy-first mobile applications. Currently leading the Enterprise Linux Platform team at HP Inc., where I architect and deliver ThinPro OS for enterprise thin clients.
+I build AI-powered tools, automation frameworks, and privacy-first mobile applications. I specialize in agentic AI systems, real-time communication platforms, and developer tooling.
 
 I hold a Master of Science in Computer Science from the University of Texas at Austin (AI/ML specialization) and a Bachelor of Science in Computer Engineering from Texas A&M University.
 
@@ -10,24 +10,32 @@ I hold a Master of Science in Computer Science from the University of Texas at A
 
 ## What I Work On
 
-**Systems & Platform Engineering** -- Linux kernel development, enterprise OS architecture, hardware enablement
+**AI Agents & Automation** -- LLM integration, RAG systems, agentic workflows, Model Context Protocol (MCP), on-device inference, voice AI
 
-**AI & Automation** -- LLM integration, RAG systems, agentic workflows, Model Context Protocol (MCP), on-device inference
+**Real-Time Communication** -- WebRTC meeting platforms, voice bots, Matrix protocol, browser-based SSH
 
 **Mobile Development** -- Privacy-first Android/iOS apps with local-first storage, on-device AI, and end-to-end encryption
 
-**Developer Tools** -- CLI tools, cross-platform libraries, workflow automation frameworks
+**Developer Tools** -- CLI tools, cross-platform libraries, workflow automation frameworks, algorithmic trading
 
 ---
 
 ## Featured Projects
 
-### Open Source
+### Top 5
 
 | Project | Description | Tech |
 |---------|-------------|------|
-| [**marktoflow**](https://github.com/marktoflow/marktoflow) | Universal automation framework -- markdown-based workflows with native MCP support, 20+ service integrations, and AI agent compatibility | TypeScript, Node.js |
+| [**marktoflow**](https://github.com/marktoflow/marktoflow) | CLI-native automation with AI agents -- markdown+YAML workflows for Claude Code, GitHub Copilot, Codex, and OpenCode with 39 SDK integrations and visual designer UI | TypeScript, Node.js |
+| [**clawmander**](https://github.com/scottgl9/clawmander) | Personal command center for OpenClaw -- virtual browser, bash terminal, AI chat, voice interface, drawing canvas, and kanban board | JavaScript, Next.js, React |
+| [**PocketGem AI Agent**](https://play.google.com/store/apps/details?id=com.vanespark.pocketgem) | Privacy-first Android AI assistant -- 100% on-device LLM inference, zero telemetry, MCP tools, RAG document Q&A | Kotlin, Jetpack Compose, LiteRT-LM |
 | [**cli-web-search**](https://github.com/scottgl9/cli-web-search) | Cross-platform CLI web search tool for AI agents with 8+ search providers, MCP server, and flexible output formats | Rust |
+| [**openclaw-matrix-voice**](https://github.com/scottgl9/openclaw-matrix-voice) | Matrix voice call bot with LiveKit integration, Whisper STT, Chatterbox TTS, and real-time AI conversation | TypeScript |
+
+### More Open Source
+
+| Project | Description | Tech |
+|---------|-------------|------|
 | [**thop**](https://github.com/scottgl9/thop) | Terminal Hopper -- CLI tool enabling AI agents to execute commands across local and remote SSH sessions with seamless context switching | Go |
 | [**qt-chatbot-agent**](https://github.com/scottgl9/qt-chatbot-agent) | Desktop chatbot with MCP tool calling, RAG document Q&A, streaming responses, and multiple LLM backend support | C++, Qt5 |
 | [**mobile-ai-agent-lib**](https://github.com/scottgl9/mobile-ai-agent-lib) | Cross-platform library for building AI agents on Android and iOS with tool calling and MCP support | Kotlin, Swift |
@@ -37,7 +45,6 @@ I hold a Master of Science in Computer Science from the University of Texas at A
 
 | Project | Description | Tech |
 |---------|-------------|------|
-| [**PocketGem AI Agent**](https://play.google.com/store/apps/details?id=com.vanespark.pocketgem) | Privacy-first Android AI assistant -- 100% on-device LLM inference, zero telemetry, MCP tools, RAG document Q&A | Kotlin, Jetpack Compose, LiteRT-LM |
 | [**ClientVault**](https://play.google.com/store/apps/details?id=com.vanespark.clientvault) | Local-first client management app with encrypted backups, WhatsApp import, document scanning, invoicing | Kotlin, Jetpack Compose |
 | [**VaneSpark Notes**](https://play.google.com/store/apps/details?id=com.vanespark.notes) | Markdown note-taking app with WYSIWYG editing, staggered grid layout, and ZIP backup | Kotlin, Jetpack Compose |
 | **VaneSpark WebSSH** | Browser-based SSH access system with Go agent, Node.js backend, and React terminal UI | Go, Node.js, React |
@@ -56,11 +63,11 @@ I hold a Master of Science in Computer Science from the University of Texas at A
 
 **Languages:** Python, C/C++, Go, Rust, Kotlin, Swift, TypeScript, Bash, Java, C#
 
-**Platforms:** Linux (kernel-level), Android, iOS, Qt, Node.js, React
+**Platforms:** Linux (kernel-level), Android, iOS, Node.js, React, Next.js, NestJS, Qt
 
-**AI/ML:** LLM integration, RAG, MCP, on-device inference (LiteRT-LM, MediaPipe), ONNX
+**AI/ML:** LLM integration, RAG, MCP, on-device inference (LiteRT-LM, MediaPipe), ONNX, voice AI (Whisper, Chatterbox)
 
-**Infrastructure:** Docker, Jenkins, Azure DevOps, GitHub Actions, PostgreSQL, Redis
+**Infrastructure:** Docker, WebRTC, LiveKit, GitHub Actions, PostgreSQL, Redis
 
 ---
 
