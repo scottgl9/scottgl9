@@ -29,13 +29,13 @@ I hold a Master of Science in Computer Science from the University of Texas at A
 | [**marktoflow**](https://github.com/marktoflow/marktoflow) | CLI-native automation with AI agents -- markdown+YAML workflows for Claude Code, GitHub Copilot, Codex, and OpenCode with 39 SDK integrations and visual designer UI | TypeScript, Node.js |
 | [**clawmander**](https://github.com/scottgl9/clawmander) | Personal command center for OpenClaw -- virtual browser, bash terminal, AI chat, voice interface, drawing canvas, and kanban board | JavaScript, Next.js, React |
 | [**PocketGem AI Agent**](https://play.google.com/store/apps/details?id=com.vanespark.pocketgem) | Privacy-first Android AI assistant -- 100% on-device LLM inference, zero telemetry, MCP tools, RAG document Q&A | Kotlin, Jetpack Compose, LiteRT-LM |
-| [**cli-web-search**](https://github.com/scottgl9/cli-web-search) | Cross-platform CLI web search tool for AI agents with 8+ search providers, MCP server, and flexible output formats | Rust |
 | [**openclaw-matrix-voice**](https://github.com/scottgl9/openclaw-matrix-voice) | Matrix voice call bot with LiveKit integration, Whisper STT, Chatterbox TTS, and real-time AI conversation | TypeScript |
 
 ### More Open Source
 
 | Project | Description | Tech |
 |---------|-------------|------|
+| [**cli-web-search**](https://github.com/scottgl9/cli-web-search) | Cross-platform CLI web search tool for AI agents with 8+ search providers, MCP server, and flexible output formats | Rust |
 | [**thop**](https://github.com/scottgl9/thop) | Terminal Hopper -- CLI tool enabling AI agents to execute commands across local and remote SSH sessions with seamless context switching | Go |
 | [**qt-chatbot-agent**](https://github.com/scottgl9/qt-chatbot-agent) | Desktop chatbot with MCP tool calling, RAG document Q&A, streaming responses, and multiple LLM backend support | C++, Qt5 |
 | [**mobile-ai-agent-lib**](https://github.com/scottgl9/mobile-ai-agent-lib) | Cross-platform library for building AI agents on Android and iOS with tool calling and MCP support | Kotlin, Swift |
